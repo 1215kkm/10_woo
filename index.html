@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>우현지 | 웹디자이너 포트폴리오</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- ✅ Lenis: 브라우저용 UMD 버전 (정상 동작 확인됨) -->
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo"></div>
+        <ul class="nav-menu">
+          <li><a href="#features">프로젝트</a></li>
+          <li><a href="#testimonials">리뷰</a></li>
+          <li><a href="#faqs">자주 묻는 질문</a></li>
+        </ul>
+        <button class="notify-btn" id="openContact">문의하기</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>웹디자인,<br><span class="highlight">우현지의 감각으로</span></h1>
+      <p class="hero-description">
+        사용자 중심의 경험과 시선을 사로잡는 디자인.  
+        섬세한 디테일로 완성되는 웹디자이너 우현지의 포트폴리오입니다.
+      </p>
+      <div class="email-form">
+        <input type="email" class="email-input" placeholder="이메일 주소를 입력하세요" />
+        <button class="get-notified-btn">알림받기</button>
+      </div>
+
+      <!-- Dashboard Preview -->
+      <div class="dashboard-preview">
+        <div class="preview-grid">
+          <div class="preview-card">
+            <span class="card-badge">작업방식</span>
+            <div style="color: #d4ff00; font-size: 12px; margin-bottom: 10px;">세밀함</div>
+            <div class="chart-placeholder"></div>
+          </div>
+          <div class="preview-card highlight">
+            <div style="margin-bottom: 20px;">
+              <div style="font-size: 12px; color: #888;">프로젝트 완성도</div>
+              <div style="font-size: 32px; font-weight: 600; margin-top: 10px;">98%</div>
+              <div style="font-size: 12px; color: #888; margin-top: 5px;">세밀한 구현력</div>
+            </div>
+            <div style="margin-top: 30px;">
+              <div style="font-size: 12px; color: #888;">성장률</div>
+              <div style="font-size: 32px; font-weight: 600; margin-top: 10px;">+5.9%</div>
+              <div style="font-size: 12px; color: #888; margin-top: 5px;">매 프로젝트마다</div>
+            </div>
+          </div>
+          <div class="preview-card">
+            <span class="card-badge" style="background: rgba(123, 97, 255, 0.2);">꾸준함</span>
+            <div style="margin-top: 100px; text-align: center;">
+              <div style="font-size: 12px; color: #888;">디자인은 반복과 진심입니다</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section class="clients">
+    <div class="container">
+      <div class="clients-title">함께한 브랜드와 프로젝트</div>
+      <div class="clients-logos">
+        <div class="client-logo">카페24</div>
+        <div class="client-logo">네이버</div>
+        <div class="client-logo">삼성디자인스쿨</div>
+        <div class="client-logo">디자인나스</div>
+        <div class="client-logo">그린컴퓨터아카데미</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 - Introduction -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-label">ABOUT</div>
+      <h2 class="intro-heading">
+        <span class="bold">디자인은 소통입니다.</span>
+        <span class="muted">사용자의 감정과 목적을 이해하고,  
+        그 경험을 시각적으로 풀어내는 것이 저의 역할입니다.</span>
+      </h2>
+      <h3 class="intro-subheading">단순한 예쁨이 아닌, 의미 있는 디자인을 추구합니다.</h3>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <h2 class="features-title">디자인으로 문제를 해결합니다.</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon growth">
+            <div style="color: #d4ff00; font-size: 12px;">성장</div>
+          </div>
+          <h3 class="feature-title">지속적인 발전</h3>
+          <p class="feature-description">프로젝트마다 새로운 시도와 피드백을 통해 성장하고 있습니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon design">
+            <div style="color: #ffc800; font-size: 18px;">🎨 트렌드 감각</div>
+          </div>
+          <h3 class="feature-title">감각적인 UI 디자인</h3>
+          <p class="feature-description">최신 트렌드와 사용자 흐름을 결합해 직관적인 화면을 구성합니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon scale">
+            <div style="color: #00ff96;">⚡</div>
+          </div>
+          <h3 class="feature-title">확장 가능한 구조</h3>
+          <p class="feature-description">유지보수와 업데이트가 용이한 구조로 설계합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Story Section -->
+  <section class="customer-story-section">
+    <div class="container">
+      <div class="customer-story-content">
+        <div class="story-text">
+          <div class="story-badge">디자인 철학</div>
+          <h2 class="story-quote">“사용자는 디자인의 주인공입니다.”</h2>
+          <a href="#" class="story-link">작업 방식 자세히 보기</a>
+        </div>
+        <div class="story-video">
+          <div class="video-play-btn"></div>
+          <div class="video-info">
+            <div class="video-info-name">우현지</div>
+            <div class="video-info-role">Web Designer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <h2 class="features-title">함께한 사람들의 평가</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-logo">🌿 팀 리더</div>
+          <p class="testimonial-text">“현지는 항상 프로젝트를 안정적으로 이끌어주며 세부 디자인 감각이 탁월합니다.”</p>
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-author">이서현</div>
+          <div class="testimonial-role">프로젝트 매니저</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-logo">💡 개발팀</div>
+          <p class="testimonial-text">“코드 이해도가 높아 협업이 수월했고, 실제 구현 가능한 디자인을 제시합니다.”</p>
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-author">김도윤</div>
+          <div class="testimonial-role">Front-end Developer</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-logo">🎨 클라이언트</div>
+          <p class="testimonial-text">“의도한 메시지를 디자인으로 정확하게 표현해주셔서 만족도가 높았습니다.”</p>
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-author">박예린</div>
+          <div class="testimonial-role">브랜드 매니저</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">45+</div>
+          <div class="stat-label">진행한 프로젝트</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5k+</div>
+          <div class="stat-label">디자인 작업 시간</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4.8</div>
+          <div class="stat-label">클라이언트 만족도</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faqs">
+    <div class="container">
+      <div class="faq-header">
+        <div class="faq-label">FAQ</div>
+        <h2 class="faq-title">자주 묻는 질문</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>디자인 작업 기간은 얼마나 걸리나요?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer">프로젝트 규모에 따라 다르지만, 평균 1~2주 내외로 진행됩니다.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>개인 포트폴리오 외주 의뢰도 가능한가요?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer">네, 가능합니다. 페이지 수와 방향에 따라 견적 및 일정이 협의됩니다.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>사용하는 디자인 툴은 무엇인가요?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer">Figma, Photoshop, Illustrator, VSCode를 주로 사용합니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">같이 디자인해볼까요?</h2>
+        <p class="cta-description">
+          함께 고민하고, 함께 성장할 수 있는 디자인 파트너를 찾고 계신가요?  
+          언제든 편하게 연락주세요.
+        </p>
+        <div class="cta-form">
+          <input type="email" class="email-input" placeholder="이메일 주소를 입력하세요">
+          <button class="get-notified-btn">문의하기</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo"></div>
+        <nav class="footer-nav">
+          <a href="#features">프로젝트</a>
+          <a href="#testimonials">리뷰</a>
+          <a href="#faqs">FAQ</a>
+        </nav>
+        <button class="notify-btn" id="openContact2">문의하기</button>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-links">
+          <a href="#">이메일</a>
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+        </div>
+        <div>© 2025 우현지 | Web Designer Portfolio</div>
+        <div class="footer-badge">Made with ♡</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Overlay -->
+  <div class="contact-overlay" id="contactOverlay">
+    <div class="contact-close" id="closeContact">✕</div>
+    <h2>문의하기</h2>
+    <input type="text" value="이름: 우현지 / 직업: 웹디자이너" readonly />
+    <input type="text" value="이메일: rute2002@nate.com" readonly />
+    <input type="text" value="좌우명: 끝까지 포기하지 않는다" readonly />
+
+    <hr style="border-color:#333; margin:15px 0;">
+
+    <label>보내는 사람 정보</label>
+    <input type="text" id="senderName" placeholder="이름을 입력하세요" required />
+    <label for="senderEmail">이메일 주소</label>
+    <input type="email" id="senderEmail" placeholder="example@domain.com" required />
+    <label for="message">문의 내용</label>
+    <textarea id="message" placeholder="문의 내용을 입력해주세요." required></textarea>
+    <button type="button" id="sendEmail">보내기</button>
+  </div>
+
+  <!-- 테마 토글 버튼 -->
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
