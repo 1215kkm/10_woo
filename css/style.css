@@ -2,7 +2,7 @@
  * { margin: 0; padding: 0; box-sizing: border-box; } 
 
  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: #000; color: #fff; overflow-x: hidden; } 
-
+ img {vertical-align: top;}
  .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; } 
 
  /* Header */
@@ -10,17 +10,18 @@
 
  nav { display: flex; justify-content: space-between; align-items: center; } 
 
- .logo { width: 40px; height: 40px; background: #fff; display: flex; align-items: center; justify-content: center; border-radius: 8px; } 
+ .logo { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 8px; } 
 
  .logo::before { content: '+'; font-size: 28px; color: #000; font-weight: bold; } 
+ .logo::after { content: '+'; font-size: 28px; color: #000; font-weight: bold; } 
 
  .nav-menu { display: flex; gap: 40px; list-style: none; } 
 
- .nav-menu a { color: #888; text-decoration: none; font-size: 14px; transition: color 0.3s; } 
+ .nav-menu a { color: #888; text-decoration: none; font-size: 16px; transition: color 0.3s; } 
 
  .nav-menu a:hover { color: #fff; } 
 
- .notify-btn { background: transparent; border: 1px solid #333; color: #fff; padding: 10px 24px; border-radius: 24px; cursor: pointer; font-size: 14px; transition: all 0.3s; } 
+ .notify-btn { background: transparent; border: 1px solid #333; color: #fff; padding: 10px 24px; border-radius: 24px; cursor: pointer; font-size: 16px; transition: all 0.3s; } 
 
  .notify-btn:hover { border-color: #666; } 
 
@@ -35,11 +36,11 @@
 
  .email-form { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 100px; } 
 
- .email-input { background: #111; border: 1px solid #333; padding: 16px 24px; border-radius: 30px; width: 300px; color: #fff; font-size: 14px; } 
+ .email-input { background: #111; border: 1px solid #333; padding: 16px 24px; border-radius: 30px; width: 300px; color: #fff; font-size: 16px; } 
 
  .email-input::placeholder { color: #666; } 
 
- .get-notified-btn { background: #ff8800; color: #000; border: none; padding: 16px 32px; border-radius: 30px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.3s; } 
+ .get-notified-btn { background: #ff8800; color: #000; border: none; padding: 16px 32px; border-radius: 30px; font-weight: 600; cursor: pointer; font-size: 16px; transition: all 0.3s; } 
 
  .get-notified-btn:hover { background: #e0ff33; transform: translateY(-2px); } 
 
@@ -48,27 +49,27 @@
 
  .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; position: relative; } 
 
- .preview-card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 20px; padding: 30px; position: relative; overflow: hidden; } 
+ .preview-card { background: #151515; border: 1px solid #1a1a1a; border-radius: 20px; padding: 30px; position: relative; overflow: hidden; } 
 
  .preview-card.highlight { border-color: #333; } 
 
- .card-badge { position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 20px; font-size: 12px; border: 1px solid rgba(255, 255, 255, 0.1); } 
+ .card-badge { position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 20px; font-size: 16px; border: 1px solid rgba(255, 255, 255, 0.1); } 
 
  .chart-placeholder { width: 100%; height: 120px; background: linear-gradient(180deg, rgba(123, 97, 255, 0.1) 0%, transparent 100%); border-radius: 12px; margin-top: 20px; position: relative; } 
 
  /* Clients Section */
  .clients { text-align: center; padding: 80px 0; border-top: 1px solid #1a1a1a; } 
 
- .clients-title { color: #666; font-size: 14px; margin-bottom: 50px; letter-spacing: 1px; } 
+ .clients-title { color: #999; font-size: 16px; margin-bottom: 50px; letter-spacing: 1px; } 
 
  .clients-logos { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 60px; opacity: 0.5; } 
 
- .client-logo { font-size: 24px; font-weight: 300; color: #666; } 
+ .client-logo { font-size: 24px; font-weight: 300; color: #ddd; } 
 
  /* Section 2 - Introduction */
  .intro-section { padding: 150px 0; text-align: center; } 
 
- .intro-label { color: #ff8800; font-size: 14px; letter-spacing: 3px; margin-bottom: 30px; font-weight: 600; } 
+ .intro-label { color: #ff8800; font-size: 16px; letter-spacing: 3px; margin-bottom: 30px; font-weight: 600; } 
 
  .intro-heading { font-size: 48px; line-height: 1.4; font-weight: 300; max-width: 900px; margin: 0 auto; } 
 
@@ -81,15 +82,16 @@
  /* Features Grid */
  .features-section { padding: 100px 0; } 
 
- .features-title { text-align: center; font-size: 36px; font-weight: 300; margin-bottom: 80px; letter-spacing: -1px; } 
+ .features-title { text-align: center; font-size: 36px; font-weight: 300; margin-bottom: 20px; letter-spacing: -1px; color: #ddd} 
+ .features-title2 { text-align: center; font-size: 20px; font-weight: 300; margin-bottom: 50px; letter-spacing: -1px; color: #ff4fa3;} 
 
- .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; } 
+ .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 150px;} 
 
- .feature-card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 24px; padding: 40px 30px; transition: all 0.3s; } 
-
+ .feature-card { background: #151515; border: 1px solid #1a1a1a; border-radius: 24px; padding: 40px 30px; transition: all 0.3s; } 
+ .feature-card img {width: 100%; height: 100%; object-fit: cover;}
  .feature-card:hover { border-color: #333; transform: translateY(-5px); } 
 
- .feature-icon { width: 100%; height: 180px; background: #111; border-radius: 16px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; } 
+ .feature-icon { width: 100%; /* height: 180px; */ background: #000; border-radius: 16px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; } 
 
  /* .feature-icon.growth { background: linear-gradient(135deg, rgba(212, 255, 0, 0.1) 0%, transparent 100%); } 
 
@@ -97,9 +99,9 @@
 
  .feature-icon.scale { background: linear-gradient(135deg, rgba(0, 255, 150, 0.1) 0%, transparent 100%); }  */
 
- .feature-title { font-size: 24px; margin-bottom: 15px; font-weight: 400; } 
+ .feature-title { font-size: 24px; margin-bottom: 15px; font-weight: 400; margin-top: 30px;} 
 
- .feature-description { color: #888; font-size: 14px; line-height: 1.6; } 
+ .feature-description { color: #888; font-size: 16px; line-height: 1.6; } 
 
  /* Customer Story Section */
  .customer-story-section { padding: 150px 0; border-top: 1px solid #1a1a1a; } 
@@ -108,13 +110,13 @@
 
  .story-text { padding-right: 40px; } 
 
- .story-badge { display: inline-flex; align-items: center; gap: 8px; color: #ff8800; font-size: 14px; margin-bottom: 30px; } 
+ .story-badge { display: inline-flex; align-items: center; gap: 8px; color: #ff8800; font-size: 16px; margin-bottom: 30px; } 
 
- .story-badge::before { content: '●'; font-size: 12px; } 
+ .story-badge::before { content: '●'; font-size: 16px; } 
 
  .story-quote { font-size: 36px; line-height: 1.4; font-weight: 300; margin-bottom: 40px; letter-spacing: -1px; } 
 
- .story-link { display: inline-flex; align-items: center; gap: 10px; color: #888; text-decoration: none; font-size: 14px; transition: color 0.3s; } 
+ .story-link { display: inline-flex; align-items: center; gap: 10px; color: #888; text-decoration: none; font-size: 16px; transition: color 0.3s; } 
 
  .story-link:hover { color: #fff; } 
 
@@ -132,28 +134,28 @@
 
  .video-info { position: absolute; bottom: 20px; left: 20px; color: #fff; } 
 
- .video-info-name { font-size: 14px; font-weight: 500; } 
+ .video-info-name { font-size: 16px; font-weight: 500; } 
 
- .video-info-role { font-size: 12px; color: rgba(255, 255, 255, 0.7); } 
+ .video-info-role { font-size: 16px; color: rgba(255, 255, 255, 0.7); } 
 
  /* Testimonials Section */
  .testimonials-section { padding: 150px 0; } 
 
  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 100px; } 
 
- .testimonial-card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 24px; padding: 40px; transition: all 0.3s; } 
+ .testimonial-card { background: #151515; border: 1px solid #1a1a1a; border-radius: 24px; padding: 40px; transition: all 0.3s; } 
 
  .testimonial-card:hover { border-color: #333; transform: translateY(-5px); } 
 
  .testimonial-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 30px; font-size: 18px; font-weight: 500; } 
 
- .testimonial-text { font-size: 14px; line-height: 1.8; color: #bbb; margin-bottom: 30px; } 
+ .testimonial-text { font-size: 16px; line-height: 1.8; color: #bbb; margin-bottom: 30px; } 
 
- .testimonial-stars { color: #ff8800; font-size: 14px; margin-bottom: 15px; } 
+ .testimonial-stars { color: #ff8800; font-size: 16px; margin-bottom: 15px; } 
 
- .testimonial-author { font-size: 14px; color: #888; } 
+ .testimonial-author { font-size: 16px; color: #888; } 
 
- .testimonial-role { font-size: 12px; color: #666; } 
+ .testimonial-role { font-size: 16px; color: #666; } 
 
  /* Stats Section */
  .stats-section { padding: 100px 0; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; } 
@@ -164,14 +166,14 @@
 
  .stat-number { font-size: 64px; font-weight: 300; margin-bottom: 15px; letter-spacing: -2px; } 
 
- .stat-label { font-size: 14px; color: #888; } 
+ .stat-label { font-size: 16px; color: #888; } 
 
  /* FAQ Section */
  .faq-section { padding: 150px 0; } 
 
  .faq-header { text-align: center; margin-bottom: 80px; } 
 
- .faq-label { color: #ff8800; font-size: 14px; letter-spacing: 3px; margin-bottom: 20px; font-weight: 600; } 
+ .faq-label { color: #ff8800; font-size: 16px; letter-spacing: 3px; margin-bottom: 20px; font-weight: 600; } 
 
  .faq-title { font-size: 48px; font-weight: 300; letter-spacing: -1px; } 
 
@@ -185,7 +187,7 @@
 
  .faq-icon { width: 30px; height: 30px; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #888; } 
 
- .faq-answer { margin-top: 20px; color: #888; font-size: 14px; line-height: 1.8; display: none; } 
+ .faq-answer { margin-top: 20px; color: #888; font-size: 16px; line-height: 1.8; display: none; } 
 
  .faq-item.active .faq-answer { display: block; } 
 
@@ -213,11 +215,11 @@
 
  .footer-nav { display: flex; gap: 40px; } 
 
- .footer-nav a { color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s; } 
+ .footer-nav a { color: #666; text-decoration: none; font-size: 16px; transition: color 0.3s; } 
 
  .footer-nav a:hover { color: #fff; } 
 
- .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; border-top: 1px solid #1a1a1a; font-size: 12px; color: #666; } 
+ .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; border-top: 1px solid #1a1a1a; font-size: 16px; color: #666; } 
 
  .footer-links { display: flex; gap: 30px; } 
 
@@ -225,7 +227,7 @@
 
  .footer-links a:hover { color: #fff; } 
 
- .footer-badge { display: flex; align-items: center; gap: 10px; background: #fff; color: #000; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 500; } 
+ .footer-badge { display: flex; align-items: center; gap: 10px; background: #fff; color: #000; padding: 8px 16px; border-radius: 20px; font-size: 16px; font-weight: 500; } 
 
  /* Responsive */
  @media (max-width: 1024px){
@@ -278,7 +280,7 @@
  @media (max-width: 480px){
  .hero h1 { font-size: 32px; } 
 
- .hero-description { font-size: 14px; } 
+ .hero-description { font-size: 16px; } 
 
  .intro-heading { font-size: 24px; } 
 
@@ -293,7 +295,7 @@
 
  .contact-overlay h2 { font-size: 24px; font-weight: 400; margin-bottom: 10px; } 
 
- .contact-overlay input { background: #222; border: 1px solid #333; border-radius: 8px; padding: 12px 15px; color: #fff; font-size: 14px; } 
+ .contact-overlay input { background: #222; border: 1px solid #333; border-radius: 8px; padding: 12px 15px; color: #fff; font-size: 16px; } 
 
  .contact-overlay button { background: #ff8800; border: none; color: #000; padding: 14px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 10px; transition: all 0.3s; } 
 
@@ -309,10 +311,9 @@
 
  header { padding:30px 0; position:relative; z-index:100; } 
  nav { display:flex; justify-content:space-between; align-items:center; } 
- .logo { width:40px; height:40px; background:#fff; display:flex; align-items:center; justify-content:center; border-radius:8px; } 
- .logo::before { content:'+'; font-size:28px; color:#000; font-weight:bold; } 
+
  .nav-menu { display:flex; gap:40px; list-style:none; } 
- .nav-menu a { color:#888; text-decoration:none; font-size:14px; transition:color .3s; } 
+ .nav-menu a { color:#888; text-decoration:none; font-size:18px; transition:color .3s; } 
  .nav-menu a:hover { color:#fff; } 
  .notify-btn { background:transparent; border:1px solid #333; color:#fff; padding:10px 24px; border-radius:24px; cursor:pointer; font-size:14px; transition:all .3s; } 
  .notify-btn:hover { border-color:#666; } 
@@ -323,7 +324,7 @@
  .hero-description { font-size:16px; color:#888; max-width:600px; margin:0 auto 50px; line-height:1.6; } 
 
  .email-form { display:flex; justify-content:center; align-items:center; gap:15px; margin-bottom:100px; } 
- .email-input { background:#111; border:1px solid #333; padding:16px 24px; border-radius:30px; width:300px; color:#fff; font-size:14px; } 
+ .email-input { background:#111; border:1px solid #555; padding:16px 24px; border-radius:30px; width:300px; color:#fff; font-size:14px; } 
  .email-input::placeholder { color:#666; } 
  .get-notified-btn { background:#ff8800; color:#000; border:none; padding:16px 32px; border-radius:30px; font-weight:600; cursor:pointer; font-size:14px; transition:all .3s; } 
  .get-notified-btn:hover { background:#e0ff33; transform:translateY(-2px); } 
@@ -352,8 +353,8 @@
 
 /* 🍋 라이트 모드 시각 개선 */
 body.light-mode {
-  background: linear-gradient(180deg, #fffdf6 0%, #fff5eb 100%);
-  color: #222;
+  background: #F2F2F2;
+  color: #555;
   transition: background 0.6s ease, color 0.4s ease;
 }
 
@@ -416,7 +417,7 @@ body.light-mode .feature-card:hover {
 
 /* 링크 */
 body.light-mode a {
-  color: #222;
+  color: #222; font-weight: bold;
 }
 body.light-mode a:hover {
   color: #ff4fa3;
