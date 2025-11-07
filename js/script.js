@@ -79,40 +79,40 @@ gsap.utils.toArray('section').forEach((section) => {
 // ------------------------------------------------
 // ✅ EmailJS 초기화 & 전송
 // ------------------------------------------------
-emailjs.init('YOUR_PUBLIC_KEY'); // 본인 공개 키
+// emailjs.init('YOUR_PUBLIC_KEY'); // 본인 공개 키
 
-document.getElementById('sendEmail').addEventListener('click', (e) => {
-  const name = document.getElementById('senderName').value.trim();
-  const email = document.getElementById('senderEmail').value.trim();
-  const msg = document.getElementById('message').value.trim();
+// document.getElementById('sendEmail').addEventListener('click', (e) => {
+//   const name = document.getElementById('senderName').value.trim();
+//   const email = document.getElementById('senderEmail').value.trim();
+//   const msg = document.getElementById('message').value.trim();
 
-  if (!name || !email || !msg) {
-    alert('모든 항목을 입력해주세요.');
-    return;
-  }
+//   if (!name || !email || !msg) {
+//     alert('모든 항목을 입력해주세요.');
+//     return;
+//   }
 
-  const templateParams = {
-    sender_name: name,
-    sender_email: email,
-    message: msg,
-    designer_name: '우현지',
-    designer_email: 'rute2002@nate.com',
-    designer_phone: '010-3321-7317',
-    designer_role: '웹디자이너',
-    designer_motto: '끝까지 포기하지 않는다'
-  };
+//   const templateParams = {
+//     sender_name: name,
+//     sender_email: email,
+//     message: msg,
+//     designer_name: '우현지',
+//     designer_email: 'rute2002@nate.com',
+//     designer_phone: '010-3321-7317',
+//     designer_role: '웹디자이너',
+//     designer_motto: '끝까지 포기하지 않는다'
+//   };
 
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams).then(
-    () => {
-      alert('메시지가 성공적으로 전송되었습니다. 감사합니다!');
-      contact.classList.remove('active');
-    },
-    (error) => {
-      alert('전송에 실패했습니다. 다시 시도해주세요.');
-      console.error('EmailJS Error:', error);
-    }
-  );
-});
+//   emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams).then(
+//     () => {
+//       alert('메시지가 성공적으로 전송되었습니다. 감사합니다!');
+//       contact.classList.remove('active');
+//     },
+//     (error) => {
+//       alert('전송에 실패했습니다. 다시 시도해주세요.');
+//       console.error('EmailJS Error:', error);
+//     }
+//   );
+// });
 
 // ------------------------------------------------
 // ✅ FAQ 아코디언
@@ -154,4 +154,134 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', isLight ? 'light' : 'dark');
   themeToggle.textContent = isLight ? '☀️' : '🌙';
   gsap.fromTo(themeToggle, { rotate: 0 }, { rotate: 360, duration: 0.6, ease: 'power2.out' });
+});
+
+
+
+
+
+
+// ✅ 카드 클릭 시 팝업 열기
+const cards = document.querySelectorAll('.feature-card');
+const popup = document.getElementById('cardPopup');
+const popupContent = document.querySelector('.popup-content');
+const popupImage = document.getElementById('popupImage');
+const popupTitle = document.getElementById('popupTitle');
+const popupDescription = document.getElementById('popupDescription');
+const closePopup = document.getElementById('closePopup');
+let scrollY = 0;
+let popupLenis;
+
+// ✅ 팝업 열기
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const img = card.querySelector('img')?.src;
+    const title = card.querySelector('.feature-title')?.textContent || '작업 제목';
+    const desc = card.querySelector('.feature-description')?.textContent || '설명 내용이 표시됩니다.';
+
+    popupImage.src = img;
+    popupTitle.textContent = title;
+    popupDescription.textContent = desc;
+
+    // ✅ Lenis 현재 위치 저장
+    if (typeof lenis !== 'undefined') {
+      scrollY = lenis.scroll;  // Lenis의 내부 스크롤 위치 저장
+      lenis.stop();
+    } else {
+      scrollY = window.scrollY;
+    }
+
+    popup.classList.add('active');
+    document.body.classList.add('no-scroll');
+    document.documentElement.classList.add('no-scroll');
+
+    // ✅ 팝업 내부 Lenis 생성
+    if (typeof Lenis !== 'undefined') {
+      popupLenis = new Lenis({
+        wrapper: popup.querySelector('.popup-left'),
+        content: popup.querySelector('.popup-left'),
+        duration: 1.1,
+        smooth: true,
+      });
+
+      function raf(time) {
+        popupLenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    }
+
+    // ✅ 애니메이션
+    gsap.set(popupContent, { scale: 0.4, rotateY: 180, opacity: 0 });
+    gsap.to(popupContent, {
+      scale: 1,
+      rotateY: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power3.out"
+    });
+  });
+});
+
+// ✅ 닫기
+closePopup.addEventListener('click', () => {
+  gsap.to(popupContent, {
+    scale: 0.7,
+    opacity: 0,
+    duration: 0.5,
+    ease: "power2.inOut",
+    onComplete: () => {
+      popup.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+      document.documentElement.classList.remove('no-scroll');
+
+      // ✅ 팝업 Lenis 제거
+      if (popupLenis) {
+        popupLenis.destroy();
+        popupLenis = null;
+      }
+
+      // ✅ 메인 Lenis 복원 (원래 위치로)
+      if (typeof lenis !== 'undefined') {
+        lenis.start();
+        lenis.scrollTo(scrollY, { immediate: true }); // ✅ 위치 복구!
+      } else {
+        window.scrollTo(0, scrollY);
+      }
+
+      gsap.set(popupContent, { scale: 1, opacity: 1 });
+    }
+  });
+});
+
+
+
+
+
+const cursorLabel = document.querySelector('.cursor-label');
+const featureCards = document.querySelectorAll('.feature-card');
+
+let mouseX = 0, mouseY = 0;
+let currentX = 0, currentY = 0;
+const speed = 0.05; // 이동 부드러움 정도 (0.1~0.2 권장)
+
+// 마우스 위치 업데이트
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+// 매 프레임마다 보간(LERP) 이동
+function animateCursor() {
+  currentX += (mouseX - currentX) * speed;
+  currentY += (mouseY - currentY) * speed;
+  cursorLabel.style.transform = `translate(${currentX - 70}px, ${currentY - 70}px) scale(${cursorLabel.classList.contains('active') ? 1 : 0})`;
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// 카드 위에서만 활성화
+featureCards.forEach(card => {
+  card.addEventListener('mouseenter', () => cursorLabel.classList.add('active'));
+  card.addEventListener('mouseleave', () => cursorLabel.classList.remove('active'));
 });
