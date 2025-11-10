@@ -263,7 +263,7 @@ const featureCards = document.querySelectorAll('.feature-card');
 
 let mouseX = 0, mouseY = 0;
 let currentX = 0, currentY = 0;
-const speed = 0.05; // 이동 부드러움 정도 (0.1~0.2 권장)
+const speed = 0.05; // 이동 부드러움 정도
 
 // 마우스 위치 업데이트
 document.addEventListener('mousemove', e => {
@@ -280,8 +280,16 @@ function animateCursor() {
 }
 animateCursor();
 
-// 카드 위에서만 활성화
+// 카드 위에서만 활성화 + 제목 표시
 featureCards.forEach(card => {
-  card.addEventListener('mouseenter', () => cursorLabel.classList.add('active'));
-  card.addEventListener('mouseleave', () => cursorLabel.classList.remove('active'));
+  card.addEventListener('mouseenter', () => {
+    const title = card.querySelector('.feature-title')?.textContent || '';
+    cursorLabel.innerHTML = `<span>${title}</span>제작스토리보기`;
+    cursorLabel.classList.add('active');
+  });
+
+  card.addEventListener('mouseleave', () => {
+    cursorLabel.innerHTML = `제작스토리보기`;
+    cursorLabel.classList.remove('active');
+  });
 });

@@ -90,7 +90,7 @@
 
  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 150px;  align-items: start;} 
 
- .feature-card { background: #151515; border: 1px solid #1a1a1a; border-radius: 24px; padding: 40px 30px; transition: all 0.3s; cursor: pointer;} 
+ .feature-card { background: #151515; border: 1px solid #1a1a1a; border-radius: 24px; padding: 40px 30px; transition: all 0.3s; cursor: pointer; max-height: 1000px; overflow: hidden;;} 
  .feature-card img {width: 100%; height: 100%; object-fit: cover;}
  .feature-card:hover { border-color: #333; transform: translateY(-5px); }
 
@@ -102,7 +102,7 @@
 
  .feature-icon.scale { background: linear-gradient(135deg, rgba(0, 255, 150, 0.1) 0%, transparent 100%); }  */
 
- .feature-title { font-size: 24px; margin-bottom: 15px; font-weight: 400; margin-top: 30px;} 
+ .feature-title { font-size: 24px; margin-bottom: 15px; font-weight: 400; margin-top: 30px; } 
 
  .feature-description { color: #888; font-size: 16px; line-height: 1.6; } 
 
@@ -773,6 +773,7 @@ html.no-scroll {
   font-size: 16px;
   font-weight: 500;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   pointer-events: none;
@@ -784,6 +785,7 @@ html.no-scroll {
   z-index: 9999; /* ✅ 중요! 맨 위로 올리기 */
   box-shadow: 0 0 50px rgba(0,0,0,0.5);
 }
+.cursor-label span {color: #ff9f00; font-size: 18px; font-weight: bold;}
 .cursor-label.active {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
